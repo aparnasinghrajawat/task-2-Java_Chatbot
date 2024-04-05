@@ -1,0 +1,59 @@
+package org.example;
+import java.util.*;
+import java.io.*;
+
+
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("chat bot started");
+        while (true){
+            Scanner sc=new Scanner(System.in);
+            System.out.println(" you can ask me anything :-");
+            String user=sc.nextLine();
+            if(user.equals("Hi!") ||user.equals("hi")||user.equals("hello")||user.equals("Hello")
+                || user.equals("Hy")|| user.equals("Hey")||user.equals("hy")){
+                System.out.println("User said : "+user);
+                System.out.println("Bot said :"+" Hello Buddy");
+            } else if ( user.equals("who are you ?")||user.equals("are you an human ?")||user.equals("are you an chatbot?")    ) {
+                System.out.println("User said :"+user);
+                System.out.println("Bot said"+ "  I am a chat bot ");
+            } else if (user.equals("how are you?")|| user.equals("How are you?")||user.equals("are you fine?")   ) {
+                System.out.println("User said : "+user);
+                System.out.println("Bot said :"+ " i am fine what about you are you fine ?");
+            } else if (user.equals("wanna be friends ?") || user.equals("will you be my friend?0")|| user.equals("Wanna be friends?")   ) {
+                System.out.println("User said :"+user);
+                System.out.println("Bot said "+" yes ! buddy we are already friends **");
+
+            } else if (user.equals("will you marry me?")|| user.equals("i want to marry you")|| user.equals("wiil you be my love?")|| user.equals("I want to spend my life with you")    ) {
+                System.out.println(" User said :"+user);
+                System.out.println("Bot said :"+ " sorry,i can't be with you because i am a chat bot and you are an human !!!" +
+                        "if you have any query i will help you as a friend");
+            }else if(user.equals("Tell me a joke") ||user.equals("joke sunao")|| user.equals("tell me any joke")   ){
+                System.out.println("User said :" +user);
+                System.out.println(" Bot said "+ "What did one ocean say to the other ocean?\n" +
+                        "Nothing, it just waved.");
+            } else if (user.equals("Add teo numbers")||user.equals("add two no.") ) {
+                System.out.println("User said :"+ user);
+                System.out.println("First number :  " );
+                int num=sc.nextInt();
+                System.out.println("Second number : " );
+                int num2= sc.nextInt();
+                System.out.println("Bot said :" +" add of two number is "+(num+num2));
+
+                
+            } else if (user.equals("Open Notepad")||user.equals("open notepad")||user.equals("notepad")) {
+                Runtime rs=Runtime.getRuntime();
+                try{
+                    rs.exec("notepad");
+                }catch(IOException e){
+                    System.out.println(e);
+                }
+
+            } else if (user.equals("Exit")|| user.equals("exit")) {
+                System.out.println("bye bye buddy call me whenever you want !!");
+                System.exit(0);
+            }
+        }
+    }
+}
