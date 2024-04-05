@@ -1,0 +1,64 @@
+Develop a java chatbot capable of engaging in conversation with
+users. The chatbot should understand natural language input and
+respond appropriately, providing relevant information or assistance.
+Utilize natural language processing techniques to enhance the bot's
+ability to interpret user queries accurately. Ensure the chatbot's
+responses are contextually relevant and contribute to a seamless
+user experience.Additionally,Imagine you've been tasked with
+creating comprehensive documentation for a java Chatbot project.Your
+documentation should include detailed explanations of the code along
+with images illustrating the program's execution and user
+interactions
+package org.example;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Chatbot started");
+
+        try (Scanner scanner = new Scanner(System.in)) {
+            while (true) {
+                System.out.println("You can ask me anything:");
+                String user = scanner.nextLine();
+
+                if (user.equalsIgnoreCase("hi") || user.equalsIgnoreCase("hello")) {
+                    respond("Hello buddy");
+                } else if (user.equalsIgnoreCase("who are you?") || user.equalsIgnoreCase("are you a human?") || user.equalsIgnoreCase("are you a chatbot?")) {
+                    respond("I am a chatbot");
+                } else if (user.equalsIgnoreCase("how are you?") || user.equalsIgnoreCase("are you fine?")) {
+                    respond("I am fine, what about you?");
+                } else if (user.equalsIgnoreCase("wanna be friends?") || user.equalsIgnoreCase("will you be my friend?")) {
+                    respond("Yes! Buddy, we are already friends.");
+                } else if (user.equalsIgnoreCase("will you marry me?") || user.equalsIgnoreCase("i want to marry you") || user.equalsIgnoreCase("will you be my love?") || user.equalsIgnoreCase("i want to spend my life with you")) {
+                    respond("Sorry, I can't be with you because I am a chatbot. But I'm here to help you as a friend.");
+                } else if (user.equalsIgnoreCase("tell me a joke") || user.equalsIgnoreCase("joke sunao") || user.equalsIgnoreCase("tell me any joke")) {
+                    respond("What did one ocean say to the other ocean? Nothing, it just waved.");
+                } else if (user.equalsIgnoreCase("add two numbers") || user.equalsIgnoreCase("add two no.") || user.equalsIgnoreCase("add two numbers")) {
+                    respond("Enter first number:");
+                    int num1 = scanner.nextInt();
+                    System.out.println("Enter second number:");
+                    int num2 = scanner.nextInt();
+                    respond("Sum of two numbers is: " + (num1 + num2));
+                } else if (user.equalsIgnoreCase("open notepad") || user.equalsIgnoreCase("notepad")) {
+                    try {
+                        Runtime.getRuntime().exec("notepad");
+                        respond("Notepad opened.");
+                    } catch (IOException e) {
+                        respond("Error: Unable to open Notepad.");
+                    }
+                } else if (user.equalsIgnoreCase("exit")) {
+                    respond("Goodbye! Call me whenever you want.");
+                    break;
+                } else {
+                    respond("I'm not sure how to respond to that.");
+                }
+            }
+        }
+    }
+
+    private static void respond(String response) {
+        System.out.println("Bot said: " + response);
+    }
+}
